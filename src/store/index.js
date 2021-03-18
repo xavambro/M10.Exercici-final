@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios';
 
 Vue.use(Vuex)
 
@@ -9,10 +10,10 @@ export default new Vuex.Store({
     pictures:[]
   },
   getters:{
-    getUsers(state){
+    users(state){
       return state.users;
     },
-    getPictures(state){
+    pictures(state){
       return state.pictures;
 
     },
