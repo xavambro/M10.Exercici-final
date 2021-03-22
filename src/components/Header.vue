@@ -8,13 +8,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <router-link class="nav-link" to='/'>Home</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Users</a>
+        <router-link class="nav-link" to="/users">Users</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pictures</a>
+        <router-link class="nav-link" to="/pictures">Pictures</router-link>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
