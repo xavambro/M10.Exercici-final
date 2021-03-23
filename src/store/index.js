@@ -17,19 +17,26 @@ export default new Vuex.Store({
       return state.pictures;
 
     },
-    user(state,id){
+   /*  user(state,id){
       return state.users.find(user => user.id == id);
+    } */
+    usersConsulted(state){
+      return state.users.filter(user => user.counter > 0)
+    },
+
+    albumsConsulted(state){
+      return state.pictures.filter(album => album.counter >0)
     }
   },
   mutations: {
-    INCREMENT(state,userSelected){
+    INCREMENT(state,selection){
       console.log()
       
-      userSelected.counter++;
+      selection.counter++;
       /* let user = state.users.find(user => user.id == userSelected.id)
       user.counter++;
       console.log(state); */
-      console.log(userSelected.counter)
+      console.log(selection.counter)
     },
     SET_USERS(state, users){
       if(state.users.length === 0){
@@ -38,7 +45,10 @@ export default new Vuex.Store({
       } 
     },
     SET_PICTURES(state,pictures){
-      state.pictures = pictures;
+      if(state.pictures.length === 0){
+        state.pictures = pictures;
+        state.pictures.counter = 0;
+      } 
     }
   },
   actions: {
