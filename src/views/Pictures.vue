@@ -22,8 +22,6 @@ export default {
     computed:{
         ...mapGetters(['pictures'])
     },  
-    mounted(){
-        this.$store.dispatch('getPictures')
-    } 
+    
 }
 </script>

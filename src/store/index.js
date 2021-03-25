@@ -7,7 +7,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     users:[],
-    pictures:[]
+    pictures:[],
+    input:'',
+    error:false,
+    show:true
   },
   getters:{
     users(state){
@@ -17,18 +20,30 @@ export default new Vuex.Store({
       return state.pictures;
 
     },
-   /*  user(state,id){
-      return state.users.find(user => user.id == id);
-    } */
+    show(state){
+      return state.show;
+    },
+    getUser(state){
+      return state.users.filter(user => user.name.toLowerCase().includes(state.input.toLowerCase()))
+    },
     usersConsulted(state){
       return state.users.filter(user => user.counter > 0)
     },
 
     albumsConsulted(state){
       return state.pictures.filter(album => album.counter >0)
+    },
+    getInput(state){
+      return state.input
     }
   },
   mutations: {
+    changeShow(state){
+      state.show = !state.show
+    },
+    addInput (state, inp){
+      state.input = inp;
+    },
     INCREMENT(state,selection){
       console.log()
       

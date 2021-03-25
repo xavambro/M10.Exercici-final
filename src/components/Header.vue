@@ -18,14 +18,31 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" aria-label="Search" v-model="input">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
 </template>
 <script>
+import {mapGetters} from 'vuex'
+import {mapMutations} from 'vuex'
 export default {
-    name:'Header'
+    name:'Header',
+    methods:{
+      ...mapMutations(['addInput'])
+    },
+    computed:{
+      ...mapGetters(['getUser'])
+      ,
+      input: {
+            get(){
+                return this.$store.state.input
+            },
+            set( value ){
+                this.$store.commit('addInput',value)
+            }
+        },
+    }
 }
 </script>
