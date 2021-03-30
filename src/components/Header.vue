@@ -19,6 +19,11 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" aria-label="Search" v-model="input">
+      <ul class="dropdown-menu">
+        <li class="dropdown-item" v-for="suggestion in getUser" :key="suggestion.id">
+            <a href="#">{{ suggestion }}</a>
+        </li>
+      </ul>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
