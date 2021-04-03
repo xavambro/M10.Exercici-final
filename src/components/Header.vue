@@ -18,13 +18,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" aria-label="Search" v-model="input">
-      <ul class="dropdown-menu">
-        <li class="dropdown-item" v-for="suggestion in getUser" :key="suggestion.id">
-            <a href="#">{{ suggestion }}</a>
-        </li>
-      </ul>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <vue-typeahead-bootstrap v-model="input" :data="getUser" placeholder="Busca un usuari" :serializer="user => user.name">
+      </vue-typeahead-bootstrap>
     </form>
   </div>
 </nav>
@@ -32,6 +27,8 @@
 <script>
 import {mapGetters} from 'vuex'
 import {mapMutations} from 'vuex'
+import VueTypeaheadBootstrap from 'vue-typeahead-bootstrap';
+
 export default {
     name:'Header',
     methods:{
@@ -48,6 +45,9 @@ export default {
                 this.$store.commit('addInput',value)
             }
         },
+    },
+    components:{
+      VueTypeaheadBootstrap
     }
 }
 </script>

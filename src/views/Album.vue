@@ -3,20 +3,19 @@
     <h3>{{$route.params.picture.title}}</h3>
     <p>{{$route.params.picture.url}}</p>
     <img :src="$route.params.picture.thumbnailUrl">
-
-    <button class="btn btn-info" @click='previous'>Torna enrere</button>
+    <GoBack></GoBack>
 </div>
 </template>
 
 <script>
+import GoBack from '../components/GoBack'
 export default {
     
     name:'Album',
-    methods:{
-        previous(){
-            this.$router.go(-1)
-        }
+    components:{
+        GoBack
     }
+    
 
 }
 </script>

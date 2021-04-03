@@ -10,8 +10,20 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+     
+.site {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh
+}
+.content {
+  flex: 1;
+}
+
+    </style>
   </head>
-  <body>
+  <body class="site">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

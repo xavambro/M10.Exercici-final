@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-<!--     <SearchUser></SearchUser>
- -->    
+    <div class="content">   
  <div v-if="getInput.length > 0">
    <div v-for="user in getUser" :key="user.id" class="border m-2 p-2 col-md-3 border-success rounded mx-auto">
     <h3>{{user.name}}</h3>
@@ -18,6 +17,7 @@
  <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutRight" mode='out-in'>
       <router-view v-if="getInput.length == 0"/>
     </transition>
+    </div>
     <Footer></Footer>
   </div>
 </template>
@@ -40,6 +40,9 @@ export default {
 }
 </script>
 <style>
+.content {
+  flex:1
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
