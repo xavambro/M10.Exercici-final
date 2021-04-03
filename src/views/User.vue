@@ -9,19 +9,17 @@
 
 
 
-
-    <button class="btn btn-info" @click='previous'>Torna enrere</button>
+    <GoBack></GoBack>
 </div>
 </template>
 
 <script>
+import GoBack from '@/components/GoBack'
 export default {
     
     name:'User',
-    methods:{
-        previous(){
-            this.$router.go(-1)
-        }
+    components:{
+        GoBack
     }
 
 }

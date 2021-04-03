@@ -41,7 +41,5 @@ export default {
 </script>
 
 <style scoped>
-    .user{
 
-    }
 </style>

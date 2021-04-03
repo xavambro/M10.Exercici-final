@@ -1,6 +1,7 @@
 <template>
 <div class="pictures">
     <h1>Pictures</h1>
+    <GoBack></GoBack>
     <div class="row d-flex justify-content-center">
     <div class="picture m-2 p-2 col-md-3 border border-success rounded" v-for="picture in pictures" :key="picture.id">
         <p>{{picture.title}}</p>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import GoBack from '@/components/GoBack'
 import {mapGetters,mapMutations} from 'vuex'
 
 export default {
@@ -22,6 +24,9 @@ export default {
     computed:{
         ...mapGetters(['pictures'])
     },  
+    components:{
+        GoBack
+    }
     
 }
 </script>

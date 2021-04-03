@@ -44,6 +44,9 @@ export default new Vuex.Store({
     addInput (state, inp){
       state.input = inp;
     },
+    removeInput(state){
+      state.input=''
+    },
     INCREMENT(state,selection){
       console.log()
       

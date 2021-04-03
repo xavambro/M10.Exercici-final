@@ -8,13 +8,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <router-link class="nav-link" to='/'>Home</router-link>
+        <router-link class="nav-link" to='/' @click.native="removeInput">Home</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/users">Users</router-link>
+        <router-link class="nav-link" to="/users" @click.native="removeInput">Users</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/pictures">Pictures</router-link>
+        <router-link class="nav-link" to="/pictures" @click.native="removeInput">Pictures</router-link>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -32,7 +32,7 @@ import VueTypeaheadBootstrap from 'vue-typeahead-bootstrap';
 export default {
     name:'Header',
     methods:{
-      ...mapMutations(['addInput'])
+      ...mapMutations(['addInput','removeInput'])
     },
     computed:{
       ...mapGetters(['getUser'])
