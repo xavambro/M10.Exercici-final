@@ -1,22 +1,21 @@
 <template>
   <div id="app">
     <Header></Header>
-    <div class="content">   
- <div v-if="getInput.length > 0">
-   <div v-for="user in getUser" :key="user.id" class="border m-2 p-2 col-md-3 border-success rounded mx-auto">
-    <h3>{{user.name}}</h3>
-    <p>{{user.username}}</p>
-        <p>{{user.email}}</p>
-            <p>{{user.phone}}</p>
-   </div>
-   </div>
-   <div v-if ="getUser.length==0 && getInput.length >0" class="alert alert-danger">
-     <p>No s'ha trobat l'usuari</p>
-   </div>
- 
- <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutRight" mode='out-in'>
-      <router-view v-if="getInput.length == 0"/>
-    </transition>
+    <div class="content mt-3">   
+      <div v-if="getInput.length > 0">
+        <div v-for="user in getUser" :key="user.id" class="border m-2 p-2 col-md-3 border-success rounded mx-auto">
+          <h3>{{user.name}}</h3>
+          <p>{{user.username}}</p>
+          <p>{{user.email}}</p>
+          <p>{{user.phone}}</p>
+        </div>
+      </div>
+      <div v-if ="getUser.length==0 && getInput.length >0" class="alert alert-danger">
+        <p>No s'ha trobat l'usuari</p>
+      </div>
+      <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutRight" mode='out-in'>
+        <router-view v-if="getInput.length == 0"/>
+      </transition>
     </div>
     <Footer></Footer>
   </div>
@@ -49,6 +48,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex ;
+  flex-direction: column;
+  min-height: 100vh
 }
 
 #nav {
