@@ -3,6 +3,8 @@
         <h3>{{$route.params.picture.title}}</h3>
         <p>{{$route.params.picture.url}}</p>
         <img :src="$route.params.picture.thumbnailUrl">
+        <br>
+        <br>
         <GoBack></GoBack>
     </div>
 </template>
@@ -16,6 +18,5 @@ export default {
         GoBack
     }
     
-
 }
 </script>

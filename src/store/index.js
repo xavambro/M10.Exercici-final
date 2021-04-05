@@ -20,9 +20,6 @@ export default new Vuex.Store({
       return state.pictures;
 
     },
-    show(state){
-      return state.show;
-    },
     getUser(state){
       return state.users.filter(user => user.name.toLowerCase().includes(state.input.toLowerCase()))
     },
@@ -38,9 +35,6 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    changeShow(state){
-      state.show = !state.show
-    },
     addInput (state, inp){
       state.input = inp;
     },
@@ -48,13 +42,8 @@ export default new Vuex.Store({
       state.input=''
     },
     INCREMENT(state,selection){
-      console.log()
-      
+      console.log() 
       selection.counter++;
-      /* let user = state.users.find(user => user.id == userSelected.id)
-      user.counter++;
-      console.log(state); */
-      console.log(selection.counter)
     },
     SET_USERS(state, users){
       if(state.users.length === 0){
@@ -79,15 +68,15 @@ export default new Vuex.Store({
         response.data.forEach(item=>item.counter = 0);
       commit('SET_USERS', response.data);
       })
-      },
-      getPictures({ commit }) {
-        axios.get('http://jsonplaceholder.typicode.com/photos')
-        .then(response => {
-          console.log(response.data);
-          response.data.forEach(item=>item.counter = 0);
-        commit('SET_PICTURES', response.data);
-        })
-        },
+    },
+    getPictures({ commit }) {
+      axios.get('http://jsonplaceholder.typicode.com/photos')
+      .then(response => {
+        console.log(response.data);
+        response.data.forEach(item=>item.counter = 0);
+      commit('SET_PICTURES', response.data);
+      })
+   },
   },
   modules: {
   }

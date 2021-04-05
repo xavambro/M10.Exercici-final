@@ -1,9 +1,9 @@
 <template>
     <footer class="bg-dark text-center text-white">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">Xavi Ambrosio</a>
+  <div class="p-3">
+    Projecte Final IT Academy:
+    <span class="text-white">Xavi Ambrosio</span>
   </div>
   <!-- Copyright -->
 </footer>

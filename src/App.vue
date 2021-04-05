@@ -5,9 +5,13 @@
       <div v-if="getInput.length > 0">
         <div v-for="user in getUser" :key="user.id" class="border m-2 p-2 col-md-3 border-success rounded mx-auto">
           <h3>{{user.name}}</h3>
-          <p>{{user.username}}</p>
-          <p>{{user.email}}</p>
-          <p>{{user.phone}}</p>
+          <hr>
+          <p>Nom d'usuari: {{user.username}}</p>
+          <p>E-mail: {{user.email}}</p>
+          <p>Telèfon: {{user.phone}}</p>
+          <p>Website: {{user.website}}</p>
+          <p>Ciutat: {{user.address.city}}</p>
+          <p>Empresa: {{user.company.name}}</p>
         </div>
       </div>
       <div v-if ="getUser.length==0 && getInput.length >0" class="alert alert-danger">
@@ -31,6 +35,7 @@ export default {
     mounted(){
         this.$store.dispatch('getUsers')
         this.$store.dispatch('getPictures')
+        
     }, 
     components:{
       Header,
