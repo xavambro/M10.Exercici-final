@@ -15,14 +15,6 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import {mapGetters} from 'vuex'
+<script src="../scripts/home.js">
 
-export default {
-  name: 'Home',
-  computed:{
-    ...mapGetters(['usersConsulted','albumsConsulted'])
-  },
-}
 </script>

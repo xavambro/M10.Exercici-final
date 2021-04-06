@@ -42,7 +42,6 @@ export default new Vuex.Store({
       state.input=''
     },
     INCREMENT(state,selection){
-      console.log() 
       selection.counter++;
     },
     SET_USERS(state, users){
@@ -62,8 +61,6 @@ export default new Vuex.Store({
     getUsers({ commit }) {
       axios.get('http://jsonplaceholder.typicode.com/users')
       .then(response => {
-        console.log(response.data);
-        console.log(response);
         //Añadimos la propiedad counter a cada uno de los usuarios
         response.data.forEach(item=>item.counter = 0);
       commit('SET_USERS', response.data);
@@ -72,7 +69,6 @@ export default new Vuex.Store({
     getPictures({ commit }) {
       axios.get('http://jsonplaceholder.typicode.com/photos')
       .then(response => {
-        console.log(response.data);
         response.data.forEach(item=>item.counter = 0);
       commit('SET_PICTURES', response.data);
       })

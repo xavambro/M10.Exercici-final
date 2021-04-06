@@ -9,14 +9,6 @@
     </div>
 </template>
 
-<script>
-import GoBack from '../components/GoBack'
-export default {
-    
-    name:'Album',
-    components:{
-        GoBack
-    }
-    
-}
+<script src="../scripts/album.js">
+
 </script>

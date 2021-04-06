@@ -12,14 +12,6 @@
 </div>
 </template>
 
-<script>
-import GoBack from '@/components/GoBack'
-export default {
-    
-    name:'User',
-    components:{
-        GoBack
-    }
+<script src="../scripts/user.js">
 
-}
 </script>
